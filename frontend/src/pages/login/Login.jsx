@@ -1,6 +1,15 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useLogin from '../../hooks/useLogin';
 
 function Login() {
+  const [inputs, setInputs] = useState({
+    username: '',
+    password: '',
+  });
+
+  const { loading, login } = useLogin();
+
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
       <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
@@ -9,7 +18,12 @@ function Login() {
           <span className="text-blue-500"> ChatApp</span>
         </h1>
 
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            login(inputs);
+          }}
+        >
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Username</span>
@@ -18,6 +32,13 @@ function Login() {
               type="text"
               placeholder="Enter username"
               className="w-full input input-bordered h-10"
+              value={inputs.username}
+              onChange={(e) =>
+                setInputs((currInputs) => ({
+                  ...currInputs,
+                  username: e.target.value,
+                }))
+              }
             />
           </div>
 
@@ -29,6 +50,13 @@ function Login() {
               type="password"
               placeholder="Enter Password"
               className="w-full input input-bordered h-10"
+              value={inputs.password}
+              onChange={(e) =>
+                setInputs((currInputs) => ({
+                  ...currInputs,
+                  password: e.target.value,
+                }))
+              }
             />
           </div>
           <Link
@@ -39,7 +67,13 @@ function Login() {
           </Link>
 
           <div>
-            <button className="btn btn-block btn-sm mt-2">Login</button>
+            <button className="btn btn-block btn-sm mt-2" disabled={loading}>
+              {loading ? (
+                <span className="loading loading-spinner "></span>
+              ) : (
+                'Login'
+              )}
+            </button>
           </div>
         </form>
       </div>
