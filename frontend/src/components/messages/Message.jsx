@@ -1,10 +1,13 @@
 import { useAuthContext } from '../../context/AuthContext';
 import useConversation from '../../zustand/useConversation';
 import { extractTime } from '../../utils/extractTime';
+import { FcLike } from 'react-icons/fc';
+import useSendLike from '../../hooks/useSendLike';
 
 function Message({ message }) {
   const { authUser } = useAuthContext();
   const { selectedConversation } = useConversation();
+  const { sendLike } = useSendLike();
 
   const fromMe = message.senderId === authUser._id;
   const formattedTime = extractTime(message.createdAt);
@@ -25,6 +28,11 @@ function Message({ message }) {
         {message.message}
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
+        <div>{message.likes}</div>
+        <FcLike
+          className="cursor-pointer"
+          onClick={() => sendLike(message._id)}
+        />
         {formattedTime}
       </div>
     </div>

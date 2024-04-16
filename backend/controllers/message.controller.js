@@ -63,3 +63,59 @@ export const getMessages = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
+
+export const likeMessage = async (req, res) => {
+  try {
+    const { id: messageId } = req.params;
+    const senderId = req.user._id;
+    const message = await Message.findById(messageId);
+
+    if (!message) {
+      return res.status(404).json({ error: 'Message not found' });
+    }
+
+    // Check if the user has already liked the message
+    if (message.likedBy.includes(senderId)) {
+      return res
+        .status(400)
+        .json({ error: 'Message already liked by the user' });
+    }
+
+    // Like the message
+    message.likes += 1;
+    message.likedBy.push(senderId);
+    await message.save();
+
+    res.status(200).json(message);
+  } catch (error) {
+    console.log('Error in likeMessage controller', error.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+export const unlikeMessage = async (req, res) => {
+  try {
+    const { id: messageId } = req.params;
+    const senderId = req.user._id;
+
+    const message = await Message.findById(messageId);
+
+    if (!message) {
+      return res.status(404).json({ error: 'Message not found' });
+    }
+
+    // Unlike the message if it was already liked
+    if (message.likes > 0 && message.likedBy.includes(senderId)) {
+      message.likes -= 1;
+      message.likedBy = message.likedBy.filter(
+        (id) => id.toString() !== senderId.toString()
+      );
+      await message.save();
+    }
+
+    res.status(200).json(message);
+  } catch (error) {
+    console.log('Error in unlikeMessage controller', error.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};

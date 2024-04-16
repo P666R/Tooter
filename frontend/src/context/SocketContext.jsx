@@ -5,14 +5,13 @@ import { io } from 'socket.io-client';
 const SocketContext = createContext();
 
 export function SocketContextProvider({ children }) {
-  // const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const { authUser } = useAuthContext();
   const socketRef = useRef(null);
 
   useEffect(() => {
     if (authUser) {
-      const socket = io('http://localhost:5000', {
+      const socket = io('https://tooter-8m9o.onrender.com', {
         query: { userId: authUser._id },
       });
 
