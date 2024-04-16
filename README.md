@@ -1,4 +1,4 @@
-# Project Name: Tooter
+# Tooter MERN app
 
 ## Description
 
@@ -6,9 +6,12 @@ Tooter is a real-time messaging application that allows users to communicate wit
 
 ## Features
 
-- **One-on-One Messaging**: Users can send and receive messages privately with other users.
+- **Messaging**: Users can send and receive messages privately with other users.
 - **Real-time Communication**: Messages are delivered instantly in real-time, providing a smooth communication experience.
 - **User Authentication**: Secure user authentication system ensures only registered users can access the application.
+- **Like/Unlike functionality**: Allows users to like and unlike comments.
+- **@ feature**: mentions @ feature shows the list of eligible users in the chat.
+- **emoji options**: emoji options provided in the chat message.
 
 ## Installation
 
