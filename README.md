@@ -2,16 +2,16 @@
 
 ## Description
 
-Tooter is a real-time messaging application that allows users to communicate with each other via text messages using one-on-one messaging functionality.
+Tooter is a real-time messaging application that allows users to communicate with each other via text messages.
 
 ## Features
 
 - **Messaging**: Users can send and receive messages privately with other users.
-- **Real-time Communication**: Messages are delivered instantly in real-time, providing a smooth communication experience.
+- **Real Time Communication**: Messages are delivered instantly in real time, providing a smooth communication experience.
 - **User Authentication**: Secure user authentication system ensures only registered users can access the application.
-- **Like/Unlike functionality**: Allows users to like and unlike comments.
-- **@ feature**: mentions @ feature shows the list of eligible users in the chat.
-- **emoji options**: emoji options provided in the chat message.
+- **Like Functionality**: Allows users to like and unlike comments.
+- **@ Feature**: @ feature shows the list of eligible users in the chat.
+- **Emoji Options**: emoji options provided in the chat message.
 
 ## Installation
 
@@ -34,11 +34,11 @@ To run Tooter locally, follow these steps:
 
 ## Usage
 
-1. **One-on-One Messaging**:
+1. **Messaging**:
 
 - Log in to your account.
 - Navigate to the chat section.
-- Select a user from the contact list to start a one-on-one conversation.
+- Select a user from the contact list to start a conversation.
 - Type your message in the input field and press Enter to send.
 
 2. **User Authentication**:
