@@ -1,4 +1,4 @@
-# Tooter MERN app
+# Tooter app (MERN)
 
 ## Description
 
@@ -8,10 +8,25 @@ Tooter is a real-time messaging application that allows users to communicate wit
 
 - **Messaging**: Users can send and receive messages privately with other users.
 - **Real Time Communication**: Messages are delivered instantly in real time, providing a smooth communication experience.
+  
+  ![realtime](https://github.com/P666R/Tooter/assets/110221853/527b91ec-f064-4c59-b7d9-a242f2a79d33)
+  <hr>
 - **User Authentication**: Secure user authentication system ensures only registered users can access the application.
+  
+  ![signuplogin](https://github.com/P666R/Tooter/assets/110221853/b0c895fa-30ea-42a4-b884-11127280be77)
+  <hr>
 - **Like Functionality**: Allows users to like and unlike comments.
+  
+  ![like](https://github.com/P666R/Tooter/assets/110221853/e74426dc-58df-4d74-8e49-666ef4088ea0)
+  <hr>
 - **@ Feature**: @ feature shows the list of eligible users in the chat.
+  
+  ![feat@](https://github.com/P666R/Tooter/assets/110221853/fd4eafb0-d1ce-48b1-ac0d-993a8daaf2b7)
+  <hr>
 - **Emoji Options**: emoji options provided in the chat message.
+  
+  ![emoji](https://github.com/P666R/Tooter/assets/110221853/65a7a30c-20c2-4bee-9b77-9ba2bddc408f)
+  <hr>
 
 ## Installation
 
